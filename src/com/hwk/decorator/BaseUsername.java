@@ -1,6 +1,6 @@
 package com.hwk.decorator;
 
-public class User {
+public class BaseUsername implements IFormatter {
     private String username;
 
     public String getUsername() {
@@ -11,7 +11,12 @@ public class User {
         this.username = username;
     }
 
-    public User(String username) {
+    public BaseUsername(String username) {
         this.username = username;
+    }
+
+    @Override
+    public String formatUsername(String username) {
+        return username;
     }
 }

@@ -1,7 +1,12 @@
 package com.hwk.decorator;
 
 public class Application {
-    public static void main(String[] args) {
-        
+    private IFormatter formatter;
+
+    public Application(IFormatter formatter) {
+        this.formatter = formatter;
+    }
+    public void showUsername(String username){
+        System.out.println(formatter.formatUsername(username));
     }
 }
