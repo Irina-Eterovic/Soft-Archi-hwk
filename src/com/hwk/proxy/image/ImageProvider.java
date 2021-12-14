@@ -39,7 +39,7 @@ public class ImageProvider implements IImageAccesor {
     }
 
     @Override
-    public Image getImage(String id) {
+    public Image getImage(String id, Integer age) {
         return getSomeImage(id);
     }
 

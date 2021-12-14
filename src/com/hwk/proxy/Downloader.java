@@ -12,22 +12,15 @@ public class Downloader {
         this.api = api;
     }
 
-    public void renderRegularImage(String id){
-        Image img = this.api.getRegularImage(id);
-        System.out.println("-------------------------------");
-        System.out.println("ID: " + img.id);
-        System.out.println("Title: " + img.name);
-        System.out.println("Video: " + img.classification);
-        System.out.println("-------------------------------");
-    }
-
-    public void renderForbiddenImage(String id){
-        Image img = this.api.getRImage(id);
-        System.out.println("-------------------------------");
-        System.out.println("ID: " + img.id);
-        System.out.println("Title: " + img.name);
-        System.out.println("Video: " + img.classification);
-        System.out.println("-------------------------------");
+    public void renderImage(String id, Integer age){
+        Image img = this.api.getImage(id,age);
+        if (img != null ) {
+            System.out.println("-------------------------------");
+            System.out.println("ID: " + img.id);
+            System.out.println("Title: " + img.name);
+            System.out.println("Video: " + img.classification);
+            System.out.println("-------------------------------");
+        }
     }
 
 }

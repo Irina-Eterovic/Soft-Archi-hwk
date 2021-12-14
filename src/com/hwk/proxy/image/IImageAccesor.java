@@ -1,5 +1,5 @@
 package com.hwk.proxy.image;
 
 public interface IImageAccesor {
-    public Image getImage(String id);
+    public Image getImage(String id,Integer age);
 }

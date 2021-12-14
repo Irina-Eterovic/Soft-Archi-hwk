@@ -2,20 +2,22 @@ package com.hwk.proxy;
 
 import com.hwk.proxy.image.IImageAccesor;
 import com.hwk.proxy.image.ImageProvider;
-import com.hwk.proxy.proxies.ImageCacheProxy;
+import com.hwk.proxy.proxies.ImageProxy;
 
 public class Application {
     public static void main(String[] args) {
         long startTime = System.currentTimeMillis();
-        System.out.println("Start amazing video app");
+        System.out.println("Start");
         ImageProvider provider = new ImageProvider();
-        IImageAccesor proxy = new ImageCacheProxy(provider);
+        IImageAccesor proxy = new ImageProxy(provider);
         Downloader downloader = new Downloader(proxy);
-        downloader.renderRegularImage("donuts");
+        downloader.renderImage("donuts",29);
         long endTime = System.currentTimeMillis();
         System.out.println("time: "+ (endTime - startTime) + "ms");
-        downloader.renderRegularImage("donuts");
+        downloader.renderImage("donuts",29);
         System.out.println("time: "+ (System.currentTimeMillis() - endTime) + "ms");
-        System.out.println("End amazing video app");
+        downloader.renderImage("dangerous",14);
+        downloader.renderImage("dangerous",28);
+        System.out.println("End");
     }
 }
