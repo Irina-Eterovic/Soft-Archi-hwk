@@ -21,8 +21,8 @@ public class Demo {
         IDiscount student = new StudentDiscount();
         IDiscount dulceViejita = new SeniorDiscount();
         IDiscount regular = new RegularDiscount();
-        context.setPaymentStrategy(dulceViejita);
-        float discount = context.pay(order);
+        context.setDiscountStrategy(dulceViejita);
+        float discount = context.calculateDiscount(order);
         float total = order.calculateTotal()-discount;
         System.out.println("Total a pagar:"+ total);
         System.out.println("El descuentito:"+ discount);
